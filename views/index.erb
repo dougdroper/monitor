@@ -1,0 +1,55 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/monitor.css">
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">
+
+<h1 class="heading">Integration monitor</h1>
+<div class="<%= @status %> status ">
+
+  <h1>
+    <div id="status"><%= @status %>  </div>
+  </h1>
+
+  <h2>Velocity: <span id="velocity"><%= @velocity %></span> </h2>
+
+  <h2>#<span id="build_number"><%= @number %> </span></h2>
+</div>
+
+
+<div class='masters_builds'>
+</div>
+
+<div class="clear"></div>
+
+<div id="progressbar">
+  <div></div>
+</div>
+
+<h2 id="story_info">
+   No Info Yet
+</h2>
+
+<audio id="success_audio">
+  <source src="/sounds/success.wav" type="audio/wav">
+</audio>
+
+<audio id="building_audio">
+  <source src="/sounds/building.wav" type="audio/wav">
+</audio>
+
+<audio id="notification_audio">
+  <source src="/sounds/notification.wav" type="audio/wav">
+</audio>
+
+<audio id="rejected_audio">
+  <source src="/sounds/rejected.wav" type="audio/wav">
+</audio>
+
+<script src="http://js.pusher.com/2.0/pusher.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+  var pusher = new Pusher('<%= Pusher.key %>');
+</script>
+
+<script src="/javascript/monitor.js"></script>
+<script src="/javascript/masters_monitor.js"></script>
